@@ -1,62 +1,43 @@
 @import "../../assets/css/variables";
+@mixin border-left {
+	margin-left: 23px;
+	padding-left: 23px;
+	border-left: 1px solid $gray-darker;
+}
 
-.header {
+.nav {
+	padding: 14px 0;
+	border-bottom: 1px solid $gray-darker;
 	&__inner {
 		display: flex;
 		justify-content: space-between;
-		padding: 15px 0;
+	}
+	
+	&__links {
+		display: flex;
 	}
 
-	&__logo {
-		font-family: $fontRoboto;
-		font-weight: 700;
-		font-size: 32px;
-		color: $red-dark;
-	}
-}
-
-.social {
-	display: flex;
 	&__link {
-		position: relative;
-
-		width: 41px;
-		height: 41px;
-
-		background-color: $gray;
-		border-radius: 5px;
-		cursor: pointer;
-		transition: background .1s linear;
-
-		text-align: center;
-		&:hover {
-			background-color: darken($gray, 10%)
-		}
+		font-size: 16px;
+		font-weight: 400;
 
 		& + & {
-			margin-left: 8px;
+			@include border-left;
 		}
+	}
 
-		&--color-black {
-			background-color: $black;
-			color: $white;
-			transition: background .1s linear;
-			&:hover {
-				background-color: $gray;
-				color: $black;
-			}
-		}
-		&--width-wide {
-			width: auto;
-			padding: 8px 10px;
-		}
+	&__info {
+		display: flex;
+	}
 
+	&__weather {
+		display: flex;
 		img {
-			display: block;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%)
+			margin-right: 10px;
 		}
+	}
+
+	&__search {
+		@include border-left;
 	}
 }

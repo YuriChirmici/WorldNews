@@ -13,13 +13,13 @@ const Header = (props) => {
 					</div>
 					<div className={styles.social}>
 						<div className={styles.social__link}> 
-							<img src={facebookIcon} alt="fb" /> 
+							<img src={facebookIcon} alt="facebook" /> 
 						</div>
 						<div className={styles.social__link}>
-							<img src={twitterIcon} alt="fb" /> 
+							<img src={twitterIcon} alt="twitter" /> 
 						</div>
 						<div className={styles.social__link}>
-							<img src={instagramIcon} alt="fb" /> 
+							<img src={instagramIcon} alt="instagram" /> 
 						</div>
 						<div className={styles.social__link + " " +
 							styles["social__link--color-black"] + " " + 

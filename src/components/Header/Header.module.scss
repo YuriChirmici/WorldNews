@@ -13,7 +13,7 @@
 		font-size: 32px;
 		color: $red-dark;
 	}
-	border-bottom: 1px solid #DDDDDD;
+	border-bottom: 1px solid $gray-darker;
 }
 
 .social {
@@ -30,6 +30,9 @@
 		transition: background .1s linear;
 
 		text-align: center;
+		font-size: 16px;
+		font-weight: 700;
+
 		&:hover {
 			background-color: darken($gray, 10%)
 		}
@@ -49,7 +52,7 @@
 		}
 		&--width-wide {
 			width: auto;
-			padding: 8px 10px;
+			padding: 8px 12px;
 		}
 
 		img {
