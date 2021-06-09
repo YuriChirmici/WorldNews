@@ -1,4 +1,4 @@
-@import "../../assets/css/variables";
+@import "../../../assets/css/variables";
 
 .header {
 	&__inner {
@@ -32,6 +32,7 @@
 		text-align: center;
 		font-size: 16px;
 		font-weight: 700;
+		text-decoration: none;
 
 		&:hover {
 			background-color: darken($gray, 10%)

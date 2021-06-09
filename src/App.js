@@ -1,15 +1,12 @@
-import logo from './logo.svg';
 import './App.scss';
-import Header from "./components/Header/Header";
-import Nav from "./components/Nav/Nav";
+import HomePage from "./components/HomePage/HomePage";
 
 function App() {
 	return (
 		<div>
-			<Header />
-			<Nav />
+			<HomePage />
 		</div>
-	);
+	)
 }
 
 export default App;

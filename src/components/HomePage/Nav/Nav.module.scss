@@ -1,4 +1,4 @@
-@import "../../assets/css/variables";
+@import "../../../assets/css/variables";
 @mixin border-left {
 	margin-left: 23px;
 	padding-left: 23px;
@@ -18,11 +18,16 @@
 	}
 
 	&__link {
+		display: block;
 		font-size: 16px;
 		font-weight: 400;
 
 		& + & {
 			@include border-left;
+		}
+
+		&.active {
+			font-weight: 700;
 		}
 	}
 
