@@ -1,9 +1,9 @@
 import styles from "./Intro.module.scss";
-import introImage from "../../../assets/images/intro.jpg";
 import asideImage from "../../../assets/images/intro-aside.jpg";
 import rightArrowIcon from "../../../assets/images/icons/arrow-right.svg";
 import leftArrowIcon from "../../../assets/images/icons/arrow-left.svg";
 import starIcon from "../../../assets/images/icons/star.svg";
+import featuredPhoto from "../../../assets/images/news/32.jpg";
 
 const LatestNews = (props) => {
 	return (
@@ -63,7 +63,7 @@ const Intro = (props) => {
 
 							<div className={styles.featured__image}>
 								<div className={styles.featured__photo}>
-									<img src={introImage} alt="intro" />
+									<img src={featuredPhoto} alt="intro" />
 									<div className={styles.featured__featured}>
 										<img src={starIcon} alt="star" />
 										<span>FEATURED</span>	
