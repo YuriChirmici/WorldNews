@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/WorldNews/static/css/main.bba63988.chunk.css",
+    "main.css": "/WorldNews/static/css/main.55a8df13.chunk.css",
     "main.js": "/WorldNews/static/js/main.69502050.chunk.js",
     "main.js.map": "/WorldNews/static/js/main.69502050.chunk.js.map",
     "runtime-main.js": "/WorldNews/static/js/runtime-main.06e5501e.js",
@@ -10,7 +10,7 @@
     "static/js/3.e7a79167.chunk.js": "/WorldNews/static/js/3.e7a79167.chunk.js",
     "static/js/3.e7a79167.chunk.js.map": "/WorldNews/static/js/3.e7a79167.chunk.js.map",
     "index.html": "/WorldNews/index.html",
-    "static/css/main.bba63988.chunk.css.map": "/WorldNews/static/css/main.bba63988.chunk.css.map",
+    "static/css/main.55a8df13.chunk.css.map": "/WorldNews/static/css/main.55a8df13.chunk.css.map",
     "static/js/2.143ba2fe.chunk.js.LICENSE.txt": "/WorldNews/static/js/2.143ba2fe.chunk.js.LICENSE.txt",
     "static/media/10.jpg": "/WorldNews/static/media/10.4ce8c1b6.jpg",
     "static/media/11.jpg": "/WorldNews/static/media/11.2c51b97c.jpg",
@@ -49,7 +49,7 @@
   "entrypoints": [
     "static/js/runtime-main.06e5501e.js",
     "static/js/2.143ba2fe.chunk.js",
-    "static/css/main.bba63988.chunk.css",
+    "static/css/main.55a8df13.chunk.css",
     "static/js/main.69502050.chunk.js"
   ]
 }
