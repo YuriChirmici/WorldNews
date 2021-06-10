@@ -2,8 +2,10 @@ import styles from "./News.module.scss";
 import rightArrowIcon from "../../../assets/images/icons/arrow-right.svg";
 
 const SmallArticle = (props) => {
+	//count == how much elements in row
+	const width = (props.count == 4) ? "24%" : "47%";
 	return (
-		<article className={styles.article + " " + styles["article--small"]}>
+		<article className={styles.article + " " + styles["article--small"]} style={{width}}>
 			<div className={styles.article__image}>
 				<img src={props.image} alt="news image" />
 			</div>
@@ -77,36 +79,36 @@ const News = (props) => {
 	//getting news by their topics
 	const newsTopic = props.news.filter( news => (
 		props.topics.news.small.includes(news.id))).reverse().map( news => {
-			return <SmallArticle news={news} image={images[news.id]}/>
+			return <SmallArticle key={news.id} news={news} image={images[news.id]} count={2}/>
 		})
 
 	const newsBigTopic = props.news.filter( news => (
 		props.topics.news.big.includes(news.id))).reverse().map( news => {
-			return <BigArticle news={news} image={images[news.id]}/>
+			return <BigArticle key={news.id} news={news} image={images[news.id]}/>
 		})
 
 	const sexTopic = props.news.filter( news => (
 		props.topics.sex.middle.includes(news.id))).reverse().map( news => {
-			return <MiddleArticle news={news} image={images[news.id]}/>
+			return <MiddleArticle key={news.id} news={news} image={images[news.id]}/>
 		})
 
 	const technologyTopic = props.news.filter( news => (
 		props.topics.technology.small.includes(news.id))).reverse().map( news => {
-			return <SmallArticle news={news} image={images[news.id]}/>
+			return <SmallArticle key={news.id} news={news} image={images[news.id]}/>
 		})
 	const technologyBigTopic = props.news.filter( news => (
 		props.topics.technology.big.includes(news.id))).reverse().map( news => {
-			return <BigArticle news={news} image={images[news.id]}/>
+			return <BigArticle key={news.id} news={news} image={images[news.id]}/>
 		})
 
 	const sportTopic = props.news.filter( news => (
 		props.topics.sport.small.includes(news.id))).reverse().map( news => {
-			return <SmallArticle news={news} image={images[news.id]}/>
+			return <SmallArticle key={news.id} news={news} image={images[news.id]} count={4}/>
 		})
 
 	const specialTopic = props.news.filter( news => (
 		props.topics.special.middle.includes(news.id))).reverse().map( news => {
-			return <MiddleArticle news={news} image={images[news.id]}/>
+			return <MiddleArticle key={news.id} news={news} image={images[news.id]}/>
 		})
 
 	return (

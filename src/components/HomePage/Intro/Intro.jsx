@@ -23,10 +23,10 @@ const LatestNews = (props) => {
 
 const FooterNews = (props) => {
 	return (
-		<div className={styles.footer__item}>
-			<div className={styles.footer__news}>
+		<div className={styles.breaking__item}>
+			<div className={styles.breaking__news}>
 				<a href="#">
-					<h4 className={styles.footer__title}>
+					<h4 className={styles.breaking__title}>
 						{props.news.title} 
 					</h4>
 				</a>
@@ -98,12 +98,15 @@ const Intro = (props) => {
 						</div>
 					</div> { /* /.intro__main */ }
 
-					<div className={styles.footer}>
-						<div className={styles.footer__main}>
+					<div className={styles.breaking}>
+						<h4 className={styles.breaking__header}>
+							BREAKING NEWS
+						</h4>
+						<div className={styles.breaking__main}>
 							{footerNews}
 						</div>
-						<div className={styles.footer__aside}>
-							<div className={styles.footer__breaking}>
+						<div className={styles.breaking__aside}>
+							<div className={styles.breaking__breaking}>
 								<img src={leftArrowIcon} alt="arrow-left" />
 								<span>BREAKING</span>	
 							</div>

@@ -24,21 +24,31 @@ const Header = (props) => {
 						target="_blank"
 						rel="noopener noreferrer"
 						>
-							<img src={twitterIcon} alt="twitter" /> 
+							<img className={styles.square} src={twitterIcon} alt="twitter" /> 
 						</a>
 						<a className={styles.social__link} href="http://instagram.com"
 						target="_blank"
 						rel="noopener noreferrer"
 						>
-							<img src={instagramIcon} alt="instagram" />
+							<img className={styles.square} src={instagramIcon} alt="instagram" />
 						</a>
 						<a className={styles.social__link + " " +
 							styles["social__link--color-black"] + " " + 
-							styles["social__link--width-wide"]
+							styles["social__link--width-wide"] + " " +
+							styles["social__link--tablet"]
 						} 
 						href="#"
 						>	
 							Subscribe for more
+						</a>
+						<a className={styles.social__link + " " +
+							styles["social__link--color-black"] + " " + 
+							styles["social__link--width-wide"] + " " +
+							styles["social__link--mobile"]
+						} 
+						href="#"
+						>	
+							Subscribe
 						</a>
 					</div>
 

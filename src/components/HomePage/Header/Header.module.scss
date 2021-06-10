@@ -3,8 +3,13 @@
 .header {
 	&__inner {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 		padding: 14px 0;
+
+		@media (max-width: $tablet) {
+			padding: 10px 0;
+		}
 	}
 
 	&__logo {
@@ -12,6 +17,14 @@
 		font-weight: 700;
 		font-size: 32px;
 		color: $red-dark;
+
+		@media (max-width: $tablet) {
+			font-size: 26px;
+		}
+
+		@media (max-width: $mobile) {
+			font-size: 16px;
+		}
 	}
 	border-bottom: 1px solid $gray-darker;
 }
@@ -21,8 +34,8 @@
 	&__link {
 		position: relative;
 
-		width: 41px;
-		height: 41px;
+		width: 40px;
+		height: 40px;
 
 		background-color: $gray;
 		border-radius: 5px;
@@ -42,6 +55,19 @@
 			margin-left: 8px;
 		}
 
+		&--tablet {
+			display: block;
+			@media (max-width: $mobile) {
+				display: none;
+			}
+		}
+
+		&--mobile {
+			display: none;
+			@media (max-width: $mobile) {
+				display: block;
+			}
+		}
 		&--color-black {
 			background-color: $black;
 			color: $white;
@@ -61,7 +87,37 @@
 			position: absolute;
 			left: 50%;
 			top: 50%;
-			transform: translate(-50%, -50%)
+			transform: translate(-50%, -50%);
+
+			&.square {
+				width: 16px;
+				height: 16px;
+			}
+
+		}
+		@media (max-width: $tablet) {
+			width: 36px;
+			height: 36px;
+
+			&--width-wide {
+				font-size: 14px;
+				width: auto;
+				padding: 8px 10px;
+			}
+
+			& + & {
+				margin-left: 4px;
+			}
+		}
+
+		@media (max-width: $mobile) {
+			width: 32px;
+			height: 32px;
+
+			&--width-wide {
+				width: auto;
+				padding: 6px 8px;
+			}
 		}
 	}
 }
