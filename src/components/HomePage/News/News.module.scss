@@ -74,6 +74,10 @@
 
 	&--red {
 		background-color: $red-medium;
+		h4{
+			color: $white;
+		}
+		
 	}
 
 	&__inner {
