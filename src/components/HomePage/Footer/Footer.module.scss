@@ -1,5 +1,16 @@
 @import "../../../assets/css/variables";
 
+@mixin border-left {
+	margin-left: 20px;
+	padding-left: 20px;
+	border-left: 2px solid $gray-darker;
+
+	@media (max-width: $desktop) {
+		margin-left: 15px;
+		padding-left: 15px;
+	}
+}
+
 .footer {
 	padding: 40px 0;
 	color: $white;
@@ -8,16 +19,36 @@
 	&__inner {
 		display: flex;
 		justify-content: space-between;
+
+		@media (max-width: $laptop) {
+			display: block;
+		}
 	}
 
 	&__left {
 		display: flex;
 		align-items: center;
+
+		@media (max-width: $laptop) {
+			justify-content: center;
+		}
+
+		@media (max-width: $tablet) {
+			margin-bottom: 20px;
+		}
+
+		@media (max-width: $mobile) {
+			display: block;
+		}
 	}
 
 	&__right {
 		display: flex;
 		align-items: center;
+
+		@media (max-width: $laptop) {
+			justify-content: center;
+		}
 	}
 
 	&__logo {
@@ -32,14 +63,28 @@
 
 		background-color: $red-medium;
 		border-radius: 50%;
+
+		@media (max-width: $desktop) {
+			margin-right: 25px;
+		}
+
+		@media (max-width: $mobile) {
+			margin: 0 auto 20px;
+		}
 	}
 
 	&__copyright {
 		margin-right: 25px;
 	}
+
+	@media (max-width: $mobile) {
+		padding: 20px 0;
+	}
 }
 
 .nav {
+	display: flex;
+
 	&__inner {
 		display: flex;
 		justify-content: space-between;
@@ -47,18 +92,40 @@
 	
 	&__links {
 		display: flex;
+
+		& + & {
+			@include border-left;
+		}
+
+		@media (max-width: $tablet) {
+			& + & {
+				margin-left: 0;
+				padding-left: 0;
+				border-left: 0;
+				margin-top: 15px;
+			}
+		}
+		@media (max-width: $mobile) {
+			justify-content: center;
+		}
 	}
 
 	&__link {
 		display: block;
 		font-size: 16px;
 		font-weight: 400;
-
+		cursor: pointer;
 		& + & {
-			margin-left: 20px;
-			padding-left: 20px;
-			border-left: 2px solid $gray-darker;
+			@include border-left;
 		}
+	}
+
+	@media (max-width: $tablet) {
+		display: block;
+	}
+
+	@media (max-width: $mobile) {
+		display: none;
 	}
 }
 

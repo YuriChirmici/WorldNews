@@ -1,11 +1,12 @@
 import Intro from "./Intro";
 import {connect} from "react-redux";
+import {getNews, getFeatured, getBreaking} from "../../../redux/news-selectors";
 
 const mapStateToProps = (state) => {
 	return {
-		news: state.news.allNews,
-		featured: state.news.featured,
-		introFooterNews: state.news.introFooterNews,
+		news: getNews(state),
+		featured: getFeatured(state),
+		breaking: getBreaking(state),
 	}
 }
 export default connect(mapStateToProps, {})(Intro);

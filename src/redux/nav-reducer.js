@@ -3,12 +3,12 @@ const initialState = {
 	temperature: 28,
 	links: {
 		names: [
+			"Intro",
 			"News",
 			"Sex", 
-			"Special Features",
 			"Technology",
 			"Sport",
-			"Analysis",
+			"Special Features",
 		],
 		active: 0,
 	}

@@ -3,17 +3,18 @@ import asideImage from "../../../assets/images/intro-aside.jpg";
 import rightArrowIcon from "../../../assets/images/icons/arrow-right.svg";
 import leftArrowIcon from "../../../assets/images/icons/arrow-left.svg";
 import starIcon from "../../../assets/images/icons/star.svg";
-import featuredPhoto from "../../../assets/images/news/32.jpg";
+
+import { NavLink } from "react-router-dom";
 
 const LatestNews = (props) => {
 	return (
 		<div className={styles.latestNews__item}>
 			<div className={styles.latestNews__info}>
-				<a href="#">
+				<NavLink to={`/news/:${props.news.id}?`}>
 					<h4 className={styles.latestNews__title}>
 						{props.news.title} 
 					</h4>
-				</a>
+				</NavLink>
 				<span> {props.news.author} </span> - 
 				<time> {props.news.date} </time>
 			</div>
@@ -24,15 +25,17 @@ const LatestNews = (props) => {
 const FooterNews = (props) => {
 	return (
 		<div className={styles.breaking__item}>
-			<div className={styles.breaking__news}>
-				<a href="#">
+			<NavLink to={`/news/:${props.news.id}?`}>
+				<div className={styles.breaking__news}>
+					
 					<h4 className={styles.breaking__title}>
 						{props.news.title} 
 					</h4>
-				</a>
-				<span> {props.news.author} </span> - 
-				<time> {props.news.date} </time>
-			</div>
+					
+					<span> {props.news.author} </span> - 
+					<time> {props.news.date} </time>
+				</div>
+			</NavLink>
 		</div>
 	)
 }
@@ -48,41 +51,44 @@ const Intro = (props) => {
 	const featuredNews = props.news.filter( news => news.id === props.featured)[0];
 
 	//footer news
-	const footerNewsList = props.news.filter( news => props.introFooterNews.includes(news.id)).reverse();
+	const footerNewsList = props.news.filter( news => props.breaking.includes(news.id)).reverse();
 
 	const footerNews = footerNewsList.map( news => {
 		return <FooterNews key={news.id} news={news} />
 	})
 
 	return (
-		<div className={styles.intro}>
+		<div className={styles.intro} id="intro">
 			<div className="container">
 				<div className={styles.intro__inner}>
 					<div className={styles.intro__main}>
 						<div className={styles.featured}>
-
 							<div className={styles.featured__image}>
-								<div className={styles.featured__photo}>
-									<img src={featuredPhoto} alt="intro" />
-									<div className={styles.featured__featured}>
-										<img src={starIcon} alt="star" />
-										<span>FEATURED</span>	
+								<NavLink to={`/news/:${featuredNews.id}?`}>
+									<div className={styles.featured__photo}>
+										<img src={featuredNews.image} alt="intro" />
+										<div className={styles.featured__featured}>
+											<img src={starIcon} alt="star" />
+											<span>FEATURED</span>	
+										</div>
 									</div>
-								</div>
+								</NavLink>
 							</div>
 
 							<div className={styles.featured__title}>
-								<a href="#">
+								<NavLink to={`/news/:${featuredNews.id}?`}>
 									<h4> {featuredNews.title} </h4>
-								</a>
+								</NavLink>
 							</div>
-
+							
 							<div className={styles.featured__text}>
 								{featuredNews.text}
 							</div>
 
 							<div className={styles.featured__button}>
-								<a href="#">Read more</a>
+								<NavLink to={`/news/:${featuredNews.id}?`}>
+									Read more
+								</NavLink>
 							</div>
 						</div>
 

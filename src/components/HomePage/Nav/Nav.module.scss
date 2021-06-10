@@ -1,13 +1,32 @@
 @import "../../../assets/css/variables";
+
 @mixin border-left {
 	margin-left: 23px;
 	padding-left: 23px;
 	border-left: 1px solid $gray-darker;
 }
 
+@mixin icon {
+	width: 40px;
+	height: 40px;
+
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+}
+
 .nav {
+	position: fixed;
+	top: 69px;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background-color: $white;
 	padding: 14px 0;
 	border-bottom: 1px solid $gray-darker;
+
 	&__inner {
 		display: flex;
 		justify-content: space-between;
@@ -15,13 +34,23 @@
 	
 	&__links {
 		display: flex;
+
+		@media (max-width: $laptop) {
+			display: none;
+			background-color: $gray;
+			padding: 15px 25px 25px 15px;
+
+			&.active {
+				display: block;
+			}
+		}	
 	}
 
 	&__link {
 		display: block;
 		font-size: 16px;
 		font-weight: 400;
-
+		cursor: pointer;
 		& + & {
 			@include border-left;
 		}
@@ -29,14 +58,31 @@
 		&.active {
 			font-weight: 700;
 		}
+
+		@media (max-width: $laptop) {
+			@include border-left;
+			padding: 5px 0;
+			padding-left: 10px;
+
+			& + & {
+				padding-left: 10px;
+			}
+
+			&.active {
+				font-weight: 700;
+				padding-left: 4px;
+			}
+		}	
 	}
 
 	&__info {
 		display: flex;
+		align-items: center;
 	}
 
 	&__weather {
 		display: flex;
+		align-items: center;
 		img {
 			margin-right: 10px;
 		}
@@ -45,4 +91,37 @@
 	&__search {
 		@include border-left;
 	}
+
+	@media (max-width: $laptop) {
+		padding: 8px 0;
+	}	
+
+	@media (max-width: $tablet) {
+		top: 57px;
+	}
+	@media (max-width: $mobile) {
+		top: 53px;
+		padding: 4px 0;
+	}		
 }
+
+.burger {
+	@include icon;
+	display: none;
+
+	@media (max-width: $laptop) {
+		&.active {
+			display: block;
+		}
+	}
+}
+
+.close {
+	@include icon;
+	display: none;
+
+	@media (max-width: $laptop) {
+		display: block;
+	}	
+}
+

@@ -1,3 +1,15 @@
+//import of all news images
+const imagesBase = require.context("../assets/images/news/", 
+	true, /\.jpg/);
+const images = {};
+
+imagesBase.keys().forEach(key => {
+	// "./32.jpg" => 32
+  let imgId = +key.split(".")[1].split("/")[1];
+	images[imgId] = imagesBase(key).default;
+})
+
+
 const initialState = {
 	allNews: [
 		{
@@ -212,7 +224,7 @@ const initialState = {
 		},	
 	],
 	featured: 32,
-	introFooterNews: [28, 29, 30, 31],
+	breaking: [28, 29, 30, 31],
 	topics: {
 		news: {
 			small: [24, 25, 26, 27],
@@ -241,6 +253,8 @@ const initialState = {
 		}, 
 	}
 }
+
+initialState.allNews.forEach(news => news.image = images[news.id]);
 
 const newsReducer = (state = initialState, action) => {
 	switch (action.type) {

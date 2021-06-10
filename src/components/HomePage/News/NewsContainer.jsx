@@ -1,10 +1,11 @@
 import News from "./News";
 import {connect} from "react-redux";
+import {getNews, getTopics} from "../../../redux/news-selectors";
 
 const mapStateToProps = (state) => {
 	return {
-		news: state.news.allNews,
-		topics: state.news.topics,
+		news: getNews(state),
+		topics: getTopics(state),
 	}
 }
 export default connect(mapStateToProps, {})(News);
