@@ -11,7 +11,10 @@ function App() {
 				exact={true}
 				render={() => <HomePage />}
 			/>
-			<Route path="/news/:news_id?" component={News} />
+			<Route 
+				path="/news/:news_id?"
+				component={News}
+			/>
 		</div>
 	)
 }

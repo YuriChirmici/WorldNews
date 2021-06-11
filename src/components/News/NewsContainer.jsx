@@ -3,10 +3,10 @@ import {connect} from "react-redux";
 import {getNews} from "../../redux/news-selectors";
 
 const NewsContainer = (props) => {
-
 	//transforms ":12" to 12
 	const newsId = +props.match.params.news_id.split(":")[1];
 	const news = props.news.filter( news => news.id === newsId)[0];
+	
 	return (
 		<>
 		{ (news) ?  
